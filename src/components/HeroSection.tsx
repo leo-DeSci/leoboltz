@@ -1,9 +1,23 @@
+import profilePhoto from "@/assets/profile-placeholder.png";
+
 const HeroSection = () => {
   return (
     <section className="max-w-2xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-      <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground mb-4">
-        Product Manager
-      </p>
+      <div className="flex items-center gap-5 mb-8">
+        <img
+          src={profilePhoto}
+          alt="Profile photo"
+          width={80}
+          height={80}
+          className="w-20 h-20 rounded-full object-cover border-2 border-border shadow-sm"
+        />
+        <div>
+          <h2 className="text-lg font-serif font-semibold text-foreground">Your Name</h2>
+          <p className="text-sm font-medium tracking-widest uppercase text-muted-foreground">
+            Product Manager
+          </p>
+        </div>
+      </div>
       <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold leading-tight text-foreground mb-8">
         Building products for the age of agents — and doing the discovery work to make sure they solve real problems.
       </h1>
