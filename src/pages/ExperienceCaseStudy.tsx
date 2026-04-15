@@ -321,7 +321,7 @@ const ExperienceCaseStudy = () => {
         {/* Objective */}
         <section id="objective" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-            The Objective
+            Objective
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed" style={{ lineHeight: 1.85 }}>
             {data.objective}
@@ -333,7 +333,7 @@ const ExperienceCaseStudy = () => {
         {/* Approach */}
         <section id="approach" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-            The Approach
+            Approach
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.85 }}>
             {data.approach.intro}
@@ -357,7 +357,7 @@ const ExperienceCaseStudy = () => {
         {/* Impact */}
         <section id="impact" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
-            The Impact
+            Impact
           </h2>
           <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.85 }}>
             {data.impact.intro}
@@ -381,7 +381,7 @@ const ExperienceCaseStudy = () => {
         {/* Learnings */}
         <section id="learnings" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-8">
-            What I Learned
+            Learnings
           </h2>
           <div className="space-y-5">
             {data.learnings.map((learning, i) => (
