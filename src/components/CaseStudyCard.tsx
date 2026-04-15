@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 const CaseStudyCard = () => {
   return (
     <section id="work" className="max-w-2xl mx-auto px-6 py-10">
-      <Link
-        to="/case-study"
-        className="block border border-border rounded-lg p-8 hover:border-primary/30 transition-colors"
-      >
+      <div className="border border-border rounded-lg p-8">
         <p className="text-xs font-medium tracking-widest uppercase text-primary mb-3">
           Case Study — Vibe Coded
         </p>
@@ -34,7 +32,14 @@ const CaseStudyCard = () => {
             </span>
           ))}
         </div>
-      </Link>
+        <Link
+          to="/case-study"
+          className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+        >
+          Read case study
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
     </section>
   );
 };
