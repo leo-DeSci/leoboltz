@@ -202,7 +202,7 @@ const caseStudies: Record<string, CaseStudyData> = {
 const SectionNav = ({ activeSection }: { activeSection: string }) => {
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-2xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="flex items-center justify-center gap-1 py-3">
           {navItems.map((item) => (
             <a
@@ -319,7 +319,7 @@ const ExperienceCaseStudy = () => {
           </div>
         </div>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Objective */}
         <section id="objective" className="mb-14 scroll-mt-16">
@@ -331,7 +331,7 @@ const ExperienceCaseStudy = () => {
           </p>
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Approach */}
         <section id="approach" className="mb-14 scroll-mt-16">
@@ -355,7 +355,7 @@ const ExperienceCaseStudy = () => {
           )}
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Impact */}
         <section id="impact" className="mb-14 scroll-mt-16">
@@ -379,7 +379,7 @@ const ExperienceCaseStudy = () => {
           )}
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Learnings */}
         <section id="learnings" className="mb-14 scroll-mt-16">
