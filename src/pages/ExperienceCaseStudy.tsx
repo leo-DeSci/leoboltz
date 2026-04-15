@@ -213,9 +213,18 @@ const ExperienceCaseStudy = () => {
           <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.85 }}>
             {data.impact_intro}
           </p>
-          <div className="border border-dashed border-border rounded-lg p-8 text-center">
-            <p className="text-sm text-muted-foreground italic">Screenshot or metrics visualization placeholder</p>
-          </div>
+          {screenshots.length > 1 ? (
+            <div className="space-y-4">
+              <img src={screenshots[1]} alt="Platform detail" className="w-full rounded-lg border border-border" />
+              {screenshots[2] && (
+                <img src={screenshots[2]} alt="Platform detail" className="w-full rounded-lg border border-border" />
+              )}
+            </div>
+          ) : (
+            <div className="border border-dashed border-border rounded-lg p-8 text-center">
+              <p className="text-sm text-muted-foreground italic">Screenshot or metrics visualization placeholder</p>
+            </div>
+          )}
           {data.impact_closing && (
             <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
               {data.impact_closing}
