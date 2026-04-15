@@ -10,18 +10,15 @@ interface CaseStudyData {
   dates: string;
   subtitle: string;
   summary: string;
-  meta: { label: string; value: string }[];
+  metaRole: string;
+  tools: string;
   objective: string;
   approach: {
     intro: string;
-    details?: string;
-    table?: { source: string; task: string }[];
     closing?: string;
   };
   impact: {
     intro: string;
-    details?: string;
-    table?: { source: string; task: string }[];
     closing?: string;
   };
   learnings: { title: string; content: string }[];
@@ -43,24 +40,13 @@ const caseStudies: Record<string, CaseStudyData> = {
     subtitle: "CASE STUDY · DECENTRALIZED SCIENCE",
     summary:
       "Owned product roadmap and led cross-functional delivery for decentralized funding tools in Web3 — bridging traditional biotech workflows with on-chain infrastructure.",
-    meta: [
-      { label: "TIMELINE", value: "2 years" },
-      { label: "DOMAIN", value: "DeSci · Web3" },
-      { label: "TEAM", value: "Cross-functional" },
-      { label: "ROLE", value: "Product Lead" },
-    ],
+    metaRole: "Product Lead",
+    tools: "Jira, Figma, Notion, Dune Analytics",
     objective:
       "Define and execute the product strategy for a decentralized science funding platform — aligning a globally distributed team around a shared roadmap while navigating the unique constraints of Web3 governance and tokenomics.",
     approach: {
       intro:
         "Describe your approach here — how you tackled the problem, frameworks you used, how you navigated ambiguity in a decentralized org. What discovery work did you do? How did you align stakeholders across time zones and cultures?",
-      table: [
-        { source: "Stakeholder interviews", task: "Map decision-making across decentralized teams" },
-        { source: "User research", task: "Understand researcher funding pain points" },
-        { source: "Competitive analysis", task: "Benchmark against traditional grant platforms" },
-        { source: "On-chain data", task: "Analyze token holder behavior and governance" },
-        { source: "Sprint reviews", task: "Align eng + design on weekly delivery cadence" },
-      ],
       closing:
         "Describe the key insight or turning point that shaped the product direction. What did you learn that wasn't obvious from the outside?",
     },
@@ -95,23 +81,13 @@ const caseStudies: Record<string, CaseStudyData> = {
     subtitle: "CASE STUDY · CLIMATE TECH",
     summary:
       "Scoped and validated early-stage product concepts in the climate adaptation space — moving from whiteboard to working prototype.",
-    meta: [
-      { label: "TIMELINE", value: "1 year" },
-      { label: "DOMAIN", value: "Climate Tech" },
-      { label: "STAGE", value: "0 → 1" },
-      { label: "ROLE", value: "EIR" },
-    ],
+    metaRole: "EIR",
+    tools: "Figma, Notion, Google Sheets, Miro",
     objective:
       "Identify and validate the most promising product opportunity in climate adaptation — moving from a broad thesis to a concrete, fundable concept with early user validation.",
     approach: {
       intro:
         "Describe how you identified and validated opportunities in climate tech. What research methods did you use? How did you move from problem space to solution space?",
-      table: [
-        { source: "Expert interviews", task: "Map the climate adaptation landscape" },
-        { source: "Market sizing", task: "Quantify addressable opportunity" },
-        { source: "User testing", task: "Validate willingness to pay" },
-        { source: "Rapid prototyping", task: "Build and test MVPs in 2-week sprints" },
-      ],
       closing:
         "What hypotheses did you test? Which ones were validated and which were killed?",
     },
@@ -146,23 +122,13 @@ const caseStudies: Record<string, CaseStudyData> = {
     subtitle: "CASE STUDY · TRAVEL TECH",
     summary:
       "Led product development for a travel-tech platform from ideation to launch — balancing speed with quality in a competitive market.",
-    meta: [
-      { label: "TIMELINE", value: "1.5 years" },
-      { label: "DOMAIN", value: "Travel Tech" },
-      { label: "STAGE", value: "Seed" },
-      { label: "ROLE", value: "Product Manager" },
-    ],
+    metaRole: "Product Manager",
+    tools: "Jira, Figma, Mixpanel, Hotjar",
     objective:
       "Take a travel-tech concept from zero to launched product — defining the core value proposition, building the initial feature set, and establishing product-market fit signals.",
     approach: {
       intro:
         "Walk through your product process — from user research and competitive analysis to feature prioritization and sprint planning.",
-      table: [
-        { source: "User interviews", task: "Understand traveler decision-making" },
-        { source: "Competitive audit", task: "Map feature gaps vs. incumbents" },
-        { source: "Analytics", task: "Identify drop-off points in booking funnel" },
-        { source: "A/B testing", task: "Optimize conversion on key flows" },
-      ],
       closing:
         "How did you balance speed with quality? What tools and frameworks guided your decisions?",
     },
@@ -197,24 +163,13 @@ const caseStudies: Record<string, CaseStudyData> = {
     subtitle: "CASE STUDY · SOCIAL CONSUMER",
     summary:
       "Built and scaled operational processes across a high-growth consumer social app — then transitioned into product-adjacent work that shaped feature priorities.",
-    meta: [
-      { label: "TIMELINE", value: "2 years" },
-      { label: "DOMAIN", value: "Consumer Social" },
-      { label: "SCALE", value: "High-growth" },
-      { label: "ROLE", value: "Head of Ops" },
-    ],
+    metaRole: "Head of Ops",
+    tools: "Asana, Google Sheets, Intercom, Looker",
     objective:
       "Build operational infrastructure from scratch for a fast-growing consumer app — then leverage operational insights to influence product direction and feature prioritization.",
     approach: {
       intro:
         "Describe how you built operational infrastructure from scratch — vendor management, logistics, team coordination.",
-      table: [
-        { source: "Process mapping", task: "Document and optimize core workflows" },
-        { source: "Vendor management", task: "Negotiate and manage key partnerships" },
-        { source: "Team building", task: "Hire and train operations team" },
-        { source: "Data analysis", task: "Surface operational insights for product" },
-        { source: "Cross-functional", task: "Bridge ops feedback into product roadmap" },
-      ],
       closing:
         "How did you transition into product-adjacent work? What operational insights shaped feature priorities?",
     },
@@ -344,15 +299,20 @@ const ExperienceCaseStudy = () => {
             {data.summary}
           </p>
 
+          {/* Role + Tools meta */}
           <div className="flex flex-wrap gap-x-8 gap-y-3 mb-8">
-            {data.meta.map((item) => (
-              <div key={item.label}>
-                <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">
-                  {item.label}
-                </p>
-                <p className="text-sm font-medium text-foreground">{item.value}</p>
-              </div>
-            ))}
+            <div>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">
+                ROLE
+              </p>
+              <p className="text-sm font-medium text-foreground">{data.metaRole}</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">
+                TOOLS
+              </p>
+              <p className="text-sm font-medium text-foreground">{data.tools}</p>
+            </div>
           </div>
         </div>
 
@@ -379,23 +339,14 @@ const ExperienceCaseStudy = () => {
             {data.approach.intro}
           </p>
 
-          {data.approach.table && (
-            <div className="border border-border rounded-lg overflow-hidden mb-8">
-              <div className="divide-y divide-border">
-                {data.approach.table.map((row, i) => (
-                  <div key={i} className="flex gap-4 px-5 py-3.5">
-                    <span className="text-sm font-mono font-medium text-primary whitespace-nowrap min-w-[160px]">
-                      {row.source}
-                    </span>
-                    <span className="text-sm text-muted-foreground">{row.task}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          <div className="border border-dashed border-border rounded-lg p-8 text-center">
+            <p className="text-sm text-muted-foreground italic">
+              Screenshot or diagram placeholder
+            </p>
+          </div>
 
           {data.approach.closing && (
-            <p className="text-base text-muted-foreground leading-relaxed" style={{ lineHeight: 1.85 }}>
+            <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
               {data.approach.closing}
             </p>
           )}
@@ -412,7 +363,7 @@ const ExperienceCaseStudy = () => {
             {data.impact.intro}
           </p>
 
-          <div className="mt-6 border border-dashed border-border rounded-lg p-8 text-center">
+          <div className="border border-dashed border-border rounded-lg p-8 text-center">
             <p className="text-sm text-muted-foreground italic">
               Screenshot or metrics visualization placeholder
             </p>
