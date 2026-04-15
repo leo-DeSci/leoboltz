@@ -11,9 +11,6 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="max-w-2xl mx-auto px-6">
-          <hr className="border-border mb-16" />
-        </div>
         <CaseStudyCard />
         <ExperienceTimeline />
         <EducationSection />
