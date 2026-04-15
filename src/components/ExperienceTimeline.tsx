@@ -22,7 +22,7 @@ const experiences = [
 const ExperienceTimeline = () => {
   return (
     <section id="work" className="max-w-2xl mx-auto px-6 pb-20">
-      <h2 className="text-2xl font-serif font-semibold text-foreground mb-10">
+      <h2 className="text-2xl font-heading font-bold text-foreground mb-10 tracking-tight">
         Experience
       </h2>
       <div className="divide-y divide-border">
@@ -32,7 +32,7 @@ const ExperienceTimeline = () => {
               <h3 className="text-base font-semibold text-foreground">
                 {exp.role}
               </h3>
-              <span className="text-sm text-muted-foreground whitespace-nowrap">
+              <span className="text-sm text-muted-foreground whitespace-nowrap font-mono">
                 {exp.dates}
               </span>
             </div>

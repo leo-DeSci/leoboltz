@@ -9,9 +9,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="font-serif text-lg font-semibold text-foreground tracking-tight">
+        <Link to="/" className="font-heading text-lg font-bold text-foreground tracking-tight">
           Your Name
         </Link>
         <div className="flex items-center gap-8">

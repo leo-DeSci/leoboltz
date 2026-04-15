@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer id="contact">
       <div className="max-w-2xl mx-auto px-6 pt-10 pb-16">
-        <h2 className="text-2xl font-serif font-semibold text-foreground mb-6">
+        <h2 className="text-2xl font-heading font-bold text-foreground mb-6 tracking-tight">
           Get in touch
         </h2>
         <div className="flex items-center gap-6">
@@ -26,9 +26,9 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="border-t">
+      <div className="border-t border-border">
         <div className="max-w-2xl mx-auto px-6 py-4">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground font-mono">
             Built with care, {new Date().getFullYear()}
           </p>
         </div>
