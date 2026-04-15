@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
         <div>
           <div className="flex items-center gap-2 mb-6">
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-highlight text-primary px-3 py-1 rounded-full">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-secondary text-muted-foreground px-3 py-1 rounded-full">
               <Sparkles className="w-3 h-3" />
               Open to opportunities
             </span>
@@ -28,7 +28,7 @@ const HeroSection = () => {
                 key={tag.label}
                 className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border text-foreground px-4 py-2 rounded-lg shadow-card"
               >
-                <tag.icon className="w-4 h-4 text-primary" />
+                <tag.icon className="w-4 h-4 text-muted-foreground" />
                 {tag.label}
               </span>
             ))}

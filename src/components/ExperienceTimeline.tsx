@@ -55,7 +55,7 @@ const ExperienceTimeline = () => {
                         {exp.role}
                       </h3>
                       {exp.current && (
-                        <span className="text-[10px] font-bold uppercase tracking-wider bg-primary text-primary-foreground px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] font-medium uppercase tracking-wider bg-secondary text-muted-foreground px-2 py-0.5 rounded-full">
                           Current
                         </span>
                       )}
