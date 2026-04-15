@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
+
+// Per-slug screenshot assets
+import bioProtocol1 from "@/assets/bio-protocol-1.png";
+import bioProtocol2 from "@/assets/bio-protocol-2.png";
+import bioProtocol3 from "@/assets/bio-protocol-3.png";
+
+const screenshotsBySlug: Record<string, string[]> = {
+  "bio-protocol": [bioProtocol1, bioProtocol2, bioProtocol3],
+};
 import Footer from "@/components/Footer";
 
 interface Learning {
@@ -47,6 +56,7 @@ const SectionNav = ({ activeSection }: { activeSection: string }) => (
 
 const ExperienceCaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
+  const screenshots = screenshotsBySlug[slug || ""] || [];
   const [activeSection, setActiveSection] = useState("intro");
 
   const { data, isLoading } = useQuery({
@@ -179,9 +189,15 @@ const ExperienceCaseStudy = () => {
           <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.85 }}>
             {data.approach_intro}
           </p>
-          <div className="border border-dashed border-border rounded-lg p-8 text-center">
-            <p className="text-sm text-muted-foreground italic">Screenshot or diagram placeholder</p>
-          </div>
+          {screenshots.length > 0 ? (
+            <div className="space-y-4">
+              <img src={screenshots[0]} alt="Platform overview" className="w-full rounded-lg border border-border" />
+            </div>
+          ) : (
+            <div className="border border-dashed border-border rounded-lg p-8 text-center">
+              <p className="text-sm text-muted-foreground italic">Screenshot or diagram placeholder</p>
+            </div>
+          )}
           {data.approach_closing && (
             <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
               {data.approach_closing}
@@ -197,9 +213,18 @@ const ExperienceCaseStudy = () => {
           <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.85 }}>
             {data.impact_intro}
           </p>
-          <div className="border border-dashed border-border rounded-lg p-8 text-center">
-            <p className="text-sm text-muted-foreground italic">Screenshot or metrics visualization placeholder</p>
-          </div>
+          {screenshots.length > 1 ? (
+            <div className="space-y-4">
+              <img src={screenshots[1]} alt="Platform detail" className="w-full rounded-lg border border-border" />
+              {screenshots[2] && (
+                <img src={screenshots[2]} alt="Platform detail" className="w-full rounded-lg border border-border" />
+              )}
+            </div>
+          ) : (
+            <div className="border border-dashed border-border rounded-lg p-8 text-center">
+              <p className="text-sm text-muted-foreground italic">Screenshot or metrics visualization placeholder</p>
+            </div>
+          )}
           {data.impact_closing && (
             <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
               {data.impact_closing}
