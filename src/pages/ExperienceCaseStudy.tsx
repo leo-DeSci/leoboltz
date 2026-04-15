@@ -9,9 +9,14 @@ import Navbar from "@/components/Navbar";
 import bioProtocol1 from "@/assets/bio-protocol-1.png";
 import bioProtocol2 from "@/assets/bio-protocol-2.png";
 import bioProtocol3 from "@/assets/bio-protocol-3.png";
+import bioProtocolLogo from "@/assets/bio-protocol-logo.png";
 
 const screenshotsBySlug: Record<string, string[]> = {
   "bio-protocol": [bioProtocol1, bioProtocol2, bioProtocol3],
+};
+
+const logosBySlug: Record<string, string> = {
+  "bio-protocol": bioProtocolLogo,
 };
 import Footer from "@/components/Footer";
 
@@ -146,9 +151,15 @@ const ExperienceCaseStudy = () => {
 
         {/* Intro */}
         <div id="intro">
-          <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6">
-            <span className="text-xs text-muted-foreground italic">Logo</span>
-          </div>
+          {logosBySlug[slug || ""] ? (
+            <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6 overflow-hidden p-2">
+              <img src={logosBySlug[slug || ""]} alt={`${data.company} logo`} className="w-full h-full object-contain" />
+            </div>
+          ) : (
+            <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6">
+              <span className="text-xs text-muted-foreground italic">Logo</span>
+            </div>
+          )}
           <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
             {data.subtitle}
           </p>
