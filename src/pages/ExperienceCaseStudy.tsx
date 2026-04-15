@@ -56,6 +56,8 @@ const SectionNav = ({ activeSection }: { activeSection: string }) => (
 
 const ExperienceCaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
+  const screenshots = screenshotsBySlug[slug || ""] || [];
+  const [activeSection, setActiveSection] = useState("intro");
   const [activeSection, setActiveSection] = useState("intro");
 
   const { data, isLoading } = useQuery({
