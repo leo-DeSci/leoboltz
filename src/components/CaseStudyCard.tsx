@@ -1,55 +1,40 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Eye } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import caseStudyImage from "@/assets/case-study-placeholder.jpg";
 
 const CaseStudyCard = () => {
   return (
-    <section id="work" className="py-20 bg-card">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center gap-3 mb-2">
-          <Eye className="w-5 h-5 text-primary" />
-          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
-            Featured Work
+    <section id="work" className="max-w-2xl mx-auto px-6 py-10">
+      <Link
+        to="/case-study"
+        className="block border border-border rounded-lg p-8 hover:border-primary/30 transition-colors"
+      >
+        <p className="text-xs font-medium tracking-widest uppercase text-primary mb-3">
+          Case Study — Vibe Coded
+        </p>
+        <h2 className="text-lg font-semibold text-foreground mb-4 tracking-tight">
+          BioRadar: AI-powered research discovery for biotech PMs
+        </h2>
+        <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
+          <p>
+            Biotech product managers spend hours scanning papers, preprints, and regulatory filings to stay on top of the competitive landscape. The tooling is scattered — PubMed, Google Scholar, ClinicalTrials.gov — and none of it is built for product people who need signal, not volume.
+          </p>
+          <p>
+            I built BioRadar in a weekend using Claude Code. It's a web app that ingests a biotech company's pipeline, pulls relevant papers and trial updates via API, and surfaces a weekly AI-generated briefing structured around what matters to a PM: competitive moves, regulatory signals, and emerging targets.
+          </p>
+          <p>
+            The prototype runs on Next.js + Vercel, uses Claude for summarization and relevance scoring, and has a clean dashboard UI I designed in Figma and implemented myself. It collapses a 4-hour weekly workflow into 10 minutes.
           </p>
         </div>
-        <p className="text-muted-foreground text-base mb-10 max-w-lg">
-          Deep dives into the discovery process, decisions, and outcomes behind real product work.
-        </p>
-
-        <Link
-          to="/case-study"
-          className="group block bg-background border border-border rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
-        >
-          <div className="grid md:grid-cols-2">
-            <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
-              <img
-                src={caseStudyImage}
-                alt="Case study preview"
-                loading="lazy"
-                width={600}
-                height={450}
-                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-              />
-            </div>
-            <div className="p-8 md:p-10 flex flex-col justify-center">
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-secondary text-muted-foreground px-2.5 py-1 rounded-md w-fit mb-4">
-                Case Study
-              </span>
-              <h2 className="text-2xl font-bold text-card-foreground mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
-                Case Study Title — Placeholder
-              </h2>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                A brief summary of what this case study is about and why it matters. This is where the story starts — the kind of messy, undefined problem that needed someone willing to dig in before jumping to solutions.
-              </p>
-              <Button variant="default" size="sm" className="w-fit group/btn">
-                Read case study
-                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
-              </Button>
-            </div>
-          </div>
-        </Link>
-      </div>
+        <div className="flex flex-wrap gap-2 mt-6">
+          {["Claude Code", "Next.js", "Vercel", "Figma", "AI + Biotech", "Vibe Coded"].map((tag) => (
+            <span
+              key={tag}
+              className="text-xs font-medium border border-border text-muted-foreground px-2.5 py-1 rounded-md"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </Link>
     </section>
   );
 };

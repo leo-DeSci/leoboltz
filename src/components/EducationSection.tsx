@@ -1,66 +1,38 @@
-import { GraduationCap, Award } from "lucide-react";
-
 const education = [
   {
-    degree: "B.S. in Business Administration",
-    institution: "University Name",
-    year: "2016 — 2020",
-    note: "Concentration in Information Systems",
-    icon: GraduationCap,
+    degree: "MSc Management — Entrepreneurship & Innovation",
+    institution: "Nova School of Business and Economics",
+    year: "2020 — 2022",
   },
   {
-    degree: "Product Management Certificate",
-    institution: "Program Name",
-    year: "2022",
-    note: null,
-    icon: Award,
+    degree: "BA Business Communications",
+    institution: "HTW Berlin",
+    year: "2016 — 2019",
   },
 ];
 
 const EducationSection = () => {
   return (
-    <section className="py-20 bg-card">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="flex items-center gap-3 mb-2">
-          <GraduationCap className="w-5 h-5 text-primary" />
-          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
-            Education
-          </p>
-        </div>
-        <p className="text-muted-foreground text-base mb-10 max-w-lg">
-          Formal education and professional development credentials.
-        </p>
-
-        <div className="grid md:grid-cols-2 gap-4">
-          {education.map((ed, i) => (
-            <div
-              key={i}
-              className="bg-background border border-border rounded-xl p-6 hover:shadow-card-hover hover:border-primary/20 transition-all duration-300"
-            >
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-highlight flex items-center justify-center shrink-0">
-                  <ed.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base font-semibold text-foreground">
-                    {ed.degree}
-                  </h3>
-                  <p className="text-sm text-muted-foreground mt-0.5">
-                    {ed.institution}
-                  </p>
-                  {ed.note && (
-                    <span className="inline-block mt-2 text-xs font-medium bg-secondary text-secondary-foreground px-2.5 py-1 rounded-md">
-                      {ed.note}
-                    </span>
-                  )}
-                  <p className="text-xs text-muted-foreground mt-2 font-medium">
-                    {ed.year}
-                  </p>
-                </div>
-              </div>
+    <section className="max-w-2xl mx-auto px-6 py-10">
+      <h2 className="text-lg font-semibold text-foreground mb-6 tracking-tight">
+        Education
+      </h2>
+      <div className="divide-y divide-border">
+        {education.map((ed, i) => (
+          <div key={i} className="flex items-start justify-between py-4">
+            <div>
+              <h3 className="text-sm font-semibold text-foreground">
+                {ed.degree}
+              </h3>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                {ed.institution}
+              </p>
             </div>
-          ))}
-        </div>
+            <span className="text-sm text-muted-foreground shrink-0 ml-4">
+              {ed.year}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );
