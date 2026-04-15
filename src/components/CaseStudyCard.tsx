@@ -33,7 +33,7 @@ const CaseStudyCard = () => {
               />
             </div>
             <div className="p-8 md:p-10 flex flex-col justify-center">
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-highlight text-primary px-2.5 py-1 rounded-md w-fit mb-4">
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-secondary text-muted-foreground px-2.5 py-1 rounded-md w-fit mb-4">
                 Case Study
               </span>
               <h2 className="text-2xl font-bold text-card-foreground mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
