@@ -4,13 +4,13 @@ const HeroSection = () => {
   return (
     <section className="max-w-2xl mx-auto px-6 pt-16 pb-10 md:pt-24 md:pb-14">
       <div className="flex flex-col items-center md:items-start">
-        <div className="w-20 h-20 rounded-full overflow-hidden mb-6">
+        <div className="w-28 h-28 rounded-full overflow-hidden mb-6">
           <img
             src={profilePhoto}
             alt="Profile photo"
-            width={80}
-            height={80}
-            className="w-full h-full object-cover"
+            width={112}
+            height={112}
+            className="w-full h-full object-cover object-[center_20%]"
           />
         </div>
         <h1 className="text-2xl md:text-3xl font-semibold text-foreground tracking-tight mb-1">
