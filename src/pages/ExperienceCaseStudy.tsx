@@ -152,14 +152,8 @@ const ExperienceCaseStudy = () => {
         {/* Intro */}
         <div id="intro">
           {logosBySlug[slug || ""] ? (
-            <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6 overflow-hidden p-2">
-              <img src={logosBySlug[slug || ""]} alt={`${data.company} logo`} className="w-full h-full object-contain" />
-            </div>
-          ) : (
-            <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6">
-              <span className="text-xs text-muted-foreground italic">Logo</span>
-            </div>
-          )}
+            <img src={logosBySlug[slug || ""]} alt={`${data.company} logo`} className="h-10 object-contain mb-6" />
+          ) : null}
           <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
             {data.subtitle}
           </p>
