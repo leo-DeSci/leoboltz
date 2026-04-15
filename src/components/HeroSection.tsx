@@ -1,29 +1,56 @@
 import profilePhoto from "@/assets/profile-placeholder.png";
+import { Briefcase, Sparkles, Search } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="max-w-2xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-      <div className="flex items-center gap-5 mb-10">
-        <img
-          src={profilePhoto}
-          alt="Profile photo"
-          width={72}
-          height={72}
-          className="w-[72px] h-[72px] rounded-none object-cover border border-border grayscale"
-        />
+    <section className="max-w-5xl mx-auto px-6 pt-20 pb-24 md:pt-28 md:pb-32">
+      <div className="grid md:grid-cols-[1fr_auto] gap-12 items-start">
         <div>
-          <h2 className="text-lg font-heading font-semibold text-foreground tracking-tight">Your Name</h2>
-          <p className="text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground">
-            Product Manager
+          <div className="flex items-center gap-2 mb-6">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-highlight text-primary px-3 py-1 rounded-full">
+              <Sparkles className="w-3 h-3" />
+              Open to opportunities
+            </span>
+          </div>
+          <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.1] text-foreground mb-6 tracking-tight">
+            Building products for the age of agents.
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl mb-8">
+            I'm a product manager who leads with discovery — user research, creative problem-solving, and the kind of empathy that catches what people don't say out loud.
           </p>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { icon: Search, label: "Discovery-led" },
+              { icon: Briefcase, label: "Product Strategy" },
+              { icon: Sparkles, label: "AI-native" },
+            ].map((tag) => (
+              <span
+                key={tag.label}
+                className="inline-flex items-center gap-2 text-sm font-medium bg-card border border-border text-foreground px-4 py-2 rounded-lg shadow-card"
+              >
+                <tag.icon className="w-4 h-4 text-primary" />
+                {tag.label}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="hidden md:block">
+          <div className="relative">
+            <div className="w-48 h-48 rounded-2xl overflow-hidden border border-border shadow-elevated">
+              <img
+                src={profilePhoto}
+                alt="Profile photo"
+                width={192}
+                height={192}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-3 -right-3 bg-card border border-border rounded-lg px-3 py-1.5 shadow-elevated">
+              <p className="text-xs font-semibold text-foreground">Product Manager</p>
+            </div>
+          </div>
         </div>
       </div>
-      <h1 className="text-3xl md:text-4xl lg:text-[2.75rem] font-heading font-bold leading-[1.15] text-foreground mb-8 tracking-tight">
-        Building products for the age of agents — and doing the discovery work to make sure they solve real problems.
-      </h1>
-      <p className="text-base md:text-lg leading-relaxed text-muted-foreground" style={{ lineHeight: 1.8 }}>
-        I'm a product manager who leads with discovery — user research, creative problem-solving, and the kind of empathy that catches what people don't say out loud. I'm most useful when the problem isn't fully defined yet, and I'm currently building toward AI-native product work where figuring out <em className="font-medium not-italic text-foreground">what</em> to build is harder than building it.
-      </p>
     </section>
   );
 };
