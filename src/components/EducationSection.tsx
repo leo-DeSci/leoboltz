@@ -2,7 +2,7 @@ const education = [
   {
     degree: "B.S. in Business Administration",
     institution: "University Name",
-    year: "2020",
+    year: "2016 — 2020",
     note: "Concentration in Information Systems",
   },
   {
@@ -16,21 +16,27 @@ const education = [
 const EducationSection = () => {
   return (
     <section className="max-w-2xl mx-auto px-6 pb-20">
-      <h2 className="text-2xl font-serif font-semibold text-foreground mb-8">
+      <h2 className="text-2xl font-serif font-semibold text-foreground mb-10">
         Education
       </h2>
-      <div className="space-y-6">
+      <div className="divide-y divide-border">
         {education.map((ed, i) => (
-          <div key={i}>
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-              <h3 className="text-base font-medium text-foreground">
+          <div key={i} className="py-6 first:pt-0">
+            <div className="flex items-baseline justify-between gap-4">
+              <h3 className="text-base font-semibold text-foreground">
                 {ed.degree}
+                {ed.note && (
+                  <span className="font-normal text-muted-foreground">
+                    {" "}— {ed.note}
+                  </span>
+                )}
               </h3>
-              <span className="text-sm text-muted-foreground">{ed.year}</span>
+              <span className="text-sm text-muted-foreground whitespace-nowrap">
+                {ed.year}
+              </span>
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground mt-1">
               {ed.institution}
-              {ed.note && <span> · {ed.note}</span>}
             </p>
           </div>
         ))}
