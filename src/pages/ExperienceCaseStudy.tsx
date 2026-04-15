@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 import bioProtocol1 from "@/assets/bio-protocol-1.png";
 import bioProtocol2 from "@/assets/bio-protocol-2.png";
 import bioProtocol3 from "@/assets/bio-protocol-3.png";
-import bioProtocolLogo from "@/assets/bio-protocol-logo.png";
+import bioProtocolLogo from "@/assets/bio-protocol-logo.svg";
 
 const screenshotsBySlug: Record<string, string[]> = {
   "bio-protocol": [bioProtocol1, bioProtocol2, bioProtocol3],
