@@ -202,7 +202,7 @@ const caseStudies: Record<string, CaseStudyData> = {
 const SectionNav = ({ activeSection }: { activeSection: string }) => {
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-2xl mx-auto px-6">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="flex items-center justify-center gap-1 py-3">
           {navItems.map((item) => (
             <a
@@ -278,7 +278,7 @@ const ExperienceCaseStudy = () => {
     <div className="min-h-screen bg-background">
       <SectionNav activeSection={activeSection} />
 
-      <article className="max-w-2xl mx-auto px-6 pt-12 pb-20 md:pt-20">
+      <article className="max-w-3xl mx-auto px-6 pt-8 pb-16 md:pt-14">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-10"
@@ -319,10 +319,10 @@ const ExperienceCaseStudy = () => {
           </div>
         </div>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Objective */}
-        <section id="objective" className="mb-14 scroll-mt-16">
+        <section id="objective" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Objective
           </h2>
@@ -331,10 +331,10 @@ const ExperienceCaseStudy = () => {
           </p>
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Approach */}
-        <section id="approach" className="mb-14 scroll-mt-16">
+        <section id="approach" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Approach
           </h2>
@@ -355,10 +355,10 @@ const ExperienceCaseStudy = () => {
           )}
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Impact */}
-        <section id="impact" className="mb-14 scroll-mt-16">
+        <section id="impact" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Impact
           </h2>
@@ -379,10 +379,10 @@ const ExperienceCaseStudy = () => {
           )}
         </section>
 
-        <hr className="border-border mb-14" />
+        <hr className="border-border mb-10" />
 
         {/* Learnings */}
-        <section id="learnings" className="mb-14 scroll-mt-16">
+        <section id="learnings" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-8">
             Learnings
           </h2>
