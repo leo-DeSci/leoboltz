@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const scrollToSection = (id: string) => {
@@ -10,31 +9,30 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
-      <div className="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
-        <Link to="/" className="font-heading text-base font-semibold text-foreground">
+    <nav className="border-b border-border">
+      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
+        <Link to="/" className="font-heading text-xl font-medium text-foreground italic">
           Your Name
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-8">
           <button
             onClick={() => scrollToSection("work")}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-md hover:bg-secondary"
+            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
           >
             Work
           </button>
           <button
             onClick={() => scrollToSection("experience")}
-            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-md hover:bg-secondary"
+            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
           >
             Experience
           </button>
-          <Button
-            size="sm"
+          <button
             onClick={() => scrollToSection("contact")}
-            className="ml-2"
+            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
           >
-            Get in touch
-          </Button>
+            Contact
+          </button>
         </div>
       </div>
     </nav>
