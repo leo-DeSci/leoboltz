@@ -189,9 +189,15 @@ const ExperienceCaseStudy = () => {
           <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.85 }}>
             {data.approach_intro}
           </p>
-          <div className="border border-dashed border-border rounded-lg p-8 text-center">
-            <p className="text-sm text-muted-foreground italic">Screenshot or diagram placeholder</p>
-          </div>
+          {screenshots.length > 0 ? (
+            <div className="space-y-4">
+              <img src={screenshots[0]} alt="Platform overview" className="w-full rounded-lg border border-border" />
+            </div>
+          ) : (
+            <div className="border border-dashed border-border rounded-lg p-8 text-center">
+              <p className="text-sm text-muted-foreground italic">Screenshot or diagram placeholder</p>
+            </div>
+          )}
           {data.approach_closing && (
             <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
               {data.approach_closing}
