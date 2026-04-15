@@ -1,51 +1,42 @@
-import { ArrowUpRight } from "lucide-react";
+import { Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-[1.5fr_1fr] gap-16 items-end">
-          <div>
-            <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-4">
-              Contact
-            </p>
-            <h2 className="font-heading text-4xl md:text-5xl font-medium text-foreground leading-[1.1] mb-6">
-              Let's work<br />
-              <em className="text-accent">together.</em>
-            </h2>
-            <p className="text-base text-muted-foreground font-light max-w-md leading-relaxed">
-              Always happy to chat about product, discovery, or AI-native experiences. Reach out and let's start a conversation.
-            </p>
-          </div>
-          <div className="space-y-4">
-            <a
-              href="mailto:hello@example.com"
-              className="group flex items-center justify-between py-4 border-b border-border hover:border-foreground transition-colors"
-            >
-              <span className="text-sm font-medium text-foreground">hello@example.com</span>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between py-4 border-b border-border hover:border-foreground transition-colors"
-            >
-              <span className="text-sm font-medium text-foreground">LinkedIn</span>
-              <ArrowUpRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors" />
-            </a>
+    <footer id="contact" className="py-20">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="bg-card border border-border rounded-2xl p-10 md:p-14 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
+            Let's work together
+          </h2>
+          <p className="text-muted-foreground text-base mb-8 max-w-md mx-auto">
+            Always happy to chat about product, discovery, or AI-native experiences.
+          </p>
+          <div className="flex items-center justify-center gap-4">
+            <Button asChild size="lg">
+              <a href="mailto:hello@example.com">
+                <Mail className="w-4 h-4" />
+                Send email
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            </Button>
           </div>
         </div>
       </div>
-      <div className="border-t border-border">
-        <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-          <p className="font-mono text-[10px] tracking-wider uppercase text-muted-foreground">
-            Built with care · {new Date().getFullYear()}
-          </p>
-          <p className="font-mono text-[10px] tracking-wider uppercase text-muted-foreground">
-            Portfolio
-          </p>
-        </div>
+      <div className="max-w-5xl mx-auto px-6 mt-10">
+        <p className="text-xs text-muted-foreground text-center">
+          Built with care · {new Date().getFullYear()}
+        </p>
       </div>
     </footer>
   );

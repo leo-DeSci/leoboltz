@@ -1,3 +1,5 @@
+import { Building2, ArrowUpRight } from "lucide-react";
+
 const experiences = [
   {
     role: "Product Manager",
@@ -24,47 +26,59 @@ const experiences = [
 
 const ExperienceTimeline = () => {
   return (
-    <section id="experience" className="border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        <div className="grid md:grid-cols-[1fr_1.5fr] gap-16">
-          <div>
-            <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-4">
-              Experience
-            </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground leading-snug">
-              A track record of building products from discovery through delivery.
-            </h2>
-          </div>
-          <div className="space-y-0">
-            {experiences.map((exp, i) => (
-              <div
-                key={i}
-                className="group py-8 border-b border-border last:border-b-0 first:pt-0"
-              >
-                <div className="flex items-baseline justify-between gap-4 mb-1">
-                  <h3 className="font-heading text-xl font-medium text-foreground group-hover:text-accent transition-colors">
-                    {exp.role}
-                    {exp.current && (
-                      <span className="ml-3 font-mono text-[10px] tracking-widest uppercase text-accent">
-                        Now
-                      </span>
-                    )}
-                  </h3>
-                  <span className="font-mono text-xs text-muted-foreground shrink-0">
+    <section id="experience" className="py-20">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-2">
+          <Building2 className="w-5 h-5 text-primary" />
+          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
+            Experience
+          </p>
+        </div>
+        <p className="text-muted-foreground text-base mb-10 max-w-lg">
+          A track record of building products from discovery through delivery.
+        </p>
+
+        <div className="grid gap-4">
+          {experiences.map((exp, i) => (
+            <div
+              key={i}
+              className="group bg-card border border-border rounded-xl p-6 hover:shadow-card-hover hover:border-primary/20 transition-all duration-300"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-highlight flex items-center justify-center shrink-0 mt-0.5">
+                    <Building2 className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-base font-semibold text-foreground">
+                        {exp.role}
+                      </h3>
+                      {exp.current && (
+                        <span className="text-[10px] font-bold uppercase tracking-wider bg-primary text-primary-foreground px-2 py-0.5 rounded-full">
+                          Current
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-0.5">
+                      {exp.company}
+                      {exp.category && (
+                        <span className="ml-2 text-xs font-medium bg-secondary text-secondary-foreground px-2 py-0.5 rounded-md">
+                          {exp.category}
+                        </span>
+                      )}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
+                  <span className="text-sm text-muted-foreground font-medium">
                     {exp.dates}
                   </span>
+                  <ArrowUpRight className="w-4 h-4 text-muted-foreground/50 group-hover:text-primary transition-colors" />
                 </div>
-                <p className="text-sm text-muted-foreground font-light">
-                  {exp.company}
-                  {exp.category && (
-                    <span className="ml-2 text-xs text-muted-foreground/70">
-                      — {exp.category}
-                    </span>
-                  )}
-                </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

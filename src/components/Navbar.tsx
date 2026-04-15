@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const scrollToSection = (id: string) => {
@@ -9,30 +10,31 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-        <Link to="/" className="font-heading text-xl font-medium text-foreground italic">
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+      <div className="max-w-5xl mx-auto px-6 py-3.5 flex items-center justify-between">
+        <Link to="/" className="font-heading text-base font-semibold text-foreground">
           Your Name
         </Link>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-2">
           <button
             onClick={() => scrollToSection("work")}
-            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-md hover:bg-secondary"
           >
             Work
           </button>
           <button
             onClick={() => scrollToSection("experience")}
-            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-md hover:bg-secondary"
           >
             Experience
           </button>
-          <button
+          <Button
+            size="sm"
             onClick={() => scrollToSection("contact")}
-            className="text-xs font-sans font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+            className="ml-2"
           >
-            Contact
-          </button>
+            Get in touch
+          </Button>
         </div>
       </div>
     </nav>

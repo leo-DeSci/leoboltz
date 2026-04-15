@@ -1,48 +1,51 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Eye } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import caseStudyImage from "@/assets/case-study-placeholder.jpg";
 
 const CaseStudyCard = () => {
   return (
-    <section id="work" className="border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-4">
-          Featured Work
+    <section id="work" className="py-20 bg-card">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center gap-3 mb-2">
+          <Eye className="w-5 h-5 text-primary" />
+          <p className="text-sm font-semibold tracking-wide uppercase text-primary">
+            Featured Work
+          </p>
+        </div>
+        <p className="text-muted-foreground text-base mb-10 max-w-lg">
+          Deep dives into the discovery process, decisions, and outcomes behind real product work.
         </p>
-        <h2 className="font-heading text-3xl md:text-4xl font-medium text-foreground mb-16">
-          Deep dives into the discovery process,<br className="hidden md:block" />
-          decisions, and outcomes behind real product work.
-        </h2>
 
-        <Link to="/case-study" className="group block">
-          <div className="grid md:grid-cols-[1.2fr_1fr] gap-12 items-start">
-            <div className="overflow-hidden">
+        <Link
+          to="/case-study"
+          className="group block bg-background border border-border rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+        >
+          <div className="grid md:grid-cols-2">
+            <div className="aspect-[4/3] md:aspect-auto overflow-hidden">
               <img
                 src={caseStudyImage}
                 alt="Case study preview"
                 loading="lazy"
-                width={700}
-                height={500}
-                className="w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                width={600}
+                height={450}
+                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
-              <p className="font-mono text-[10px] tracking-wider uppercase text-muted-foreground mt-3">
-                Fig. 02 — Case Study
-              </p>
             </div>
-            <div className="md:pt-8">
-              <p className="font-mono text-xs tracking-widest uppercase text-accent mb-4">
+            <div className="p-8 md:p-10 flex flex-col justify-center">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold bg-highlight text-primary px-2.5 py-1 rounded-md w-fit mb-4">
                 Case Study
-              </p>
-              <h3 className="font-heading text-2xl md:text-3xl font-medium text-foreground mb-4 leading-snug group-hover:text-accent transition-colors duration-300">
+              </span>
+              <h2 className="text-2xl font-bold text-card-foreground mb-3 tracking-tight group-hover:text-primary transition-colors duration-200">
                 Case Study Title — Placeholder
-              </h3>
-              <p className="text-base text-muted-foreground leading-relaxed mb-8 font-light">
+              </h2>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6">
                 A brief summary of what this case study is about and why it matters. This is where the story starts — the kind of messy, undefined problem that needed someone willing to dig in before jumping to solutions.
               </p>
-              <span className="inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-accent transition-colors">
-                Read the full story
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+              <Button variant="default" size="sm" className="w-fit group/btn">
+                Read case study
+                <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
+              </Button>
             </div>
           </div>
         </Link>
