@@ -322,7 +322,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-10" />
 
         {/* Objective */}
-        <section id="objective" className="mb-14 scroll-mt-16">
+        <section id="objective" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Objective
           </h2>
@@ -334,7 +334,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-10" />
 
         {/* Approach */}
-        <section id="approach" className="mb-14 scroll-mt-16">
+        <section id="approach" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Approach
           </h2>
@@ -358,7 +358,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-10" />
 
         {/* Impact */}
-        <section id="impact" className="mb-14 scroll-mt-16">
+        <section id="impact" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             Impact
           </h2>
@@ -382,7 +382,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-10" />
 
         {/* Learnings */}
-        <section id="learnings" className="mb-14 scroll-mt-16">
+        <section id="learnings" className="mb-10 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-8">
             Learnings
           </h2>
