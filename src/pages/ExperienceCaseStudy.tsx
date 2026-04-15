@@ -4,6 +4,15 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import Navbar from "@/components/Navbar";
+
+// Per-slug screenshot assets
+import bioProtocol1 from "@/assets/bio-protocol-1.png";
+import bioProtocol2 from "@/assets/bio-protocol-2.png";
+import bioProtocol3 from "@/assets/bio-protocol-3.png";
+
+const screenshotsBySlug: Record<string, string[]> = {
+  "bio-protocol": [bioProtocol1, bioProtocol2, bioProtocol3],
+};
 import Footer from "@/components/Footer";
 
 interface Learning {
