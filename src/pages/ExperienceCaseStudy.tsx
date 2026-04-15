@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -10,6 +11,7 @@ interface CaseStudyData {
   subtitle: string;
   summary: string;
   meta: { label: string; value: string }[];
+  objective: string;
   approach: {
     intro: string;
     details?: string;
@@ -25,6 +27,14 @@ interface CaseStudyData {
   learnings: { title: string; content: string }[];
 }
 
+const navItems = [
+  { id: "intro", label: "Intro" },
+  { id: "objective", label: "Objective" },
+  { id: "approach", label: "Approach" },
+  { id: "impact", label: "Impact" },
+  { id: "learnings", label: "Learnings" },
+];
+
 const caseStudies: Record<string, CaseStudyData> = {
   "bio-protocol": {
     role: "Program & Product Manager",
@@ -39,6 +49,8 @@ const caseStudies: Record<string, CaseStudyData> = {
       { label: "TEAM", value: "Cross-functional" },
       { label: "ROLE", value: "Product Lead" },
     ],
+    objective:
+      "Define and execute the product strategy for a decentralized science funding platform — aligning a globally distributed team around a shared roadmap while navigating the unique constraints of Web3 governance and tokenomics.",
     approach: {
       intro:
         "Describe your approach here — how you tackled the problem, frameworks you used, how you navigated ambiguity in a decentralized org. What discovery work did you do? How did you align stakeholders across time zones and cultures?",
@@ -89,6 +101,8 @@ const caseStudies: Record<string, CaseStudyData> = {
       { label: "STAGE", value: "0 → 1" },
       { label: "ROLE", value: "EIR" },
     ],
+    objective:
+      "Identify and validate the most promising product opportunity in climate adaptation — moving from a broad thesis to a concrete, fundable concept with early user validation.",
     approach: {
       intro:
         "Describe how you identified and validated opportunities in climate tech. What research methods did you use? How did you move from problem space to solution space?",
@@ -138,6 +152,8 @@ const caseStudies: Record<string, CaseStudyData> = {
       { label: "STAGE", value: "Seed" },
       { label: "ROLE", value: "Product Manager" },
     ],
+    objective:
+      "Take a travel-tech concept from zero to launched product — defining the core value proposition, building the initial feature set, and establishing product-market fit signals.",
     approach: {
       intro:
         "Walk through your product process — from user research and competitive analysis to feature prioritization and sprint planning.",
@@ -187,6 +203,8 @@ const caseStudies: Record<string, CaseStudyData> = {
       { label: "SCALE", value: "High-growth" },
       { label: "ROLE", value: "Head of Ops" },
     ],
+    objective:
+      "Build operational infrastructure from scratch for a fast-growing consumer app — then leverage operational insights to influence product direction and feature prioritization.",
     approach: {
       intro:
         "Describe how you built operational infrastructure from scratch — vendor management, logistics, team coordination.",
@@ -226,9 +244,61 @@ const caseStudies: Record<string, CaseStudyData> = {
   },
 };
 
+const SectionNav = ({ activeSection }: { activeSection: string }) => {
+  return (
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div className="max-w-2xl mx-auto px-6">
+        <div className="flex items-center justify-center gap-1 py-3">
+          {navItems.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`px-4 py-1.5 rounded-full text-sm transition-colors ${
+                activeSection === item.id
+                  ? "bg-foreground text-background font-medium"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+  );
+};
+
 const ExperienceCaseStudy = () => {
   const { slug } = useParams<{ slug: string }>();
   const data = slug ? caseStudies[slug] : undefined;
+  const [activeSection, setActiveSection] = useState("intro");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => ({
+        id: item.id,
+        el: document.getElementById(item.id),
+      }));
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const el = sections[i].el;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100) {
+            setActiveSection(sections[i].id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   if (!data) {
     return (
@@ -251,7 +321,8 @@ const ExperienceCaseStudy = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
+      <SectionNav activeSection={activeSection} />
+
       <article className="max-w-2xl mx-auto px-6 pt-12 pb-20 md:pt-20">
         <Link
           to="/"
@@ -261,33 +332,46 @@ const ExperienceCaseStudy = () => {
           Back to home
         </Link>
 
-        {/* Hero */}
-        <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
-          {data.subtitle}
-        </p>
-        <h1 className="text-3xl md:text-4xl font-serif font-semibold leading-tight text-foreground mb-2">
-          {data.role}
-        </h1>
-        <p className="text-lg text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.8 }}>
-          {data.summary}
-        </p>
+        {/* Intro */}
+        <div id="intro">
+          <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
+            {data.subtitle}
+          </p>
+          <h1 className="text-3xl md:text-4xl font-serif font-semibold leading-tight text-foreground mb-2">
+            {data.role}
+          </h1>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.8 }}>
+            {data.summary}
+          </p>
 
-        {/* Meta row */}
-        <div className="flex flex-wrap gap-x-8 gap-y-3 mb-8">
-          {data.meta.map((item) => (
-            <div key={item.label}>
-              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">
-                {item.label}
-              </p>
-              <p className="text-sm font-medium text-foreground">{item.value}</p>
-            </div>
-          ))}
+          <div className="flex flex-wrap gap-x-8 gap-y-3 mb-8">
+            {data.meta.map((item) => (
+              <div key={item.label}>
+                <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">
+                  {item.label}
+                </p>
+                <p className="text-sm font-medium text-foreground">{item.value}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <hr className="border-border mb-14" />
 
+        {/* Objective */}
+        <section id="objective" className="mb-14 scroll-mt-16">
+          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
+            The Objective
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed" style={{ lineHeight: 1.85 }}>
+            {data.objective}
+          </p>
+        </section>
+
+        <hr className="border-border mb-14" />
+
         {/* Approach */}
-        <section className="mb-14">
+        <section id="approach" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             The Approach
           </h2>
@@ -320,7 +404,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-14" />
 
         {/* Impact */}
-        <section className="mb-14">
+        <section id="impact" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">
             The Impact
           </h2>
@@ -328,22 +412,6 @@ const ExperienceCaseStudy = () => {
             {data.impact.intro}
           </p>
 
-          {data.impact.table && (
-            <div className="border border-border rounded-lg overflow-hidden mb-8">
-              <div className="divide-y divide-border">
-                {data.impact.table.map((row, i) => (
-                  <div key={i} className="flex gap-4 px-5 py-3.5">
-                    <span className="text-sm font-mono font-medium text-primary whitespace-nowrap min-w-[160px]">
-                      {row.source}
-                    </span>
-                    <span className="text-sm text-muted-foreground">{row.task}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Placeholder for screenshots */}
           <div className="mt-6 border border-dashed border-border rounded-lg p-8 text-center">
             <p className="text-sm text-muted-foreground italic">
               Screenshot or metrics visualization placeholder
@@ -360,7 +428,7 @@ const ExperienceCaseStudy = () => {
         <hr className="border-border mb-14" />
 
         {/* Learnings */}
-        <section className="mb-14">
+        <section id="learnings" className="mb-14 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-8">
             What I Learned
           </h2>
