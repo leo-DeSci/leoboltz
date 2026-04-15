@@ -289,6 +289,9 @@ const ExperienceCaseStudy = () => {
 
         {/* Intro */}
         <div id="intro">
+          <div className="w-14 h-14 rounded-xl border border-border bg-card flex items-center justify-center mb-6">
+            <span className="text-xs text-muted-foreground italic">Logo</span>
+          </div>
           <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
             {data.subtitle}
           </p>
