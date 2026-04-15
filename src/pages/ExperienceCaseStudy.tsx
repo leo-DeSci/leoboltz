@@ -85,7 +85,7 @@ const ExperienceCaseStudy = () => {
   }, []);
 
   const learnings: Learning[] = Array.isArray(data?.learnings)
-    ? (data.learnings as Learning[])
+    ? (data.learnings as unknown as Learning[])
     : [];
 
   if (isLoading) {
