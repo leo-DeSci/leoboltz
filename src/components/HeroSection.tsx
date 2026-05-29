@@ -20,7 +20,7 @@ const HeroSection = () => {
           Product Manager · AI + Bio
         </p>
         <p className="text-base text-muted-foreground leading-relaxed">
-          Product Manager with 7+ years building at VC-backed startups. I own discovery through delivery, turn ambiguity into clear product decisions, and obsess over building the right thing for real users. Background in decentralized science, climate tech, and consumer apps. Now exploring AI + Bio — where my domain knowledge meets the most interesting product challenges of the decade.
+          Product Manager with 7+ years building at VC-backed startups. I own discovery through delivery, turn ambiguity into clear product decisions, and obsess over building the right thing for real users. Background in decentralized science, climate tech, and consumer apps. Currently exploring AI enabled product building in healthcare and sustainability where my domain knowledge meets the most interesting product challenges of the decade.
         </p>
       </div>
     </section>
