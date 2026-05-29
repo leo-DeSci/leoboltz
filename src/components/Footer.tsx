@@ -26,7 +26,7 @@ const Footer = () => {
       </div>
       <div className="border-t border-border pt-6">
         <p className="text-xs text-muted-foreground text-center">
-          Berlin → San Francisco, {new Date().getFullYear()}
+          Berlin x Lisbon, 2026
         </p>
       </div>
     </footer>
