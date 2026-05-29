@@ -169,13 +169,13 @@ const ExperienceCaseStudy = () => {
             {data.summary}
           </p>
 
-          <div className="space-y-8 mb-12">
+          <div className="space-y-10 mb-12">
             <div>
-              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-3">ROLE</p>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">ROLE</p>
               <p className="text-sm font-medium text-foreground">{data.meta_role}</p>
             </div>
             <div>
-              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-3">TOOLS</p>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">TOOLS</p>
               <p className="text-sm font-medium text-foreground">{data.tools}</p>
             </div>
           </div>
