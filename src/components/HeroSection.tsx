@@ -17,7 +17,7 @@ const HeroSection = () => {
           Leo Boltz
         </h1>
         <p className="text-sm text-muted-foreground mb-8">
-          Product Manager · AI + Bio
+          Product Manager · AI + Healthcare + Sustainability{" "}
         </p>
         <p className="text-base text-muted-foreground leading-relaxed">
           Product Manager with 7+ years building at VC-backed startups. I own discovery through delivery, turn ambiguity into clear product decisions, and obsess over building the right thing for real users. Background in decentralized science, climate tech, and consumer apps. Currently exploring AI enabled product building in healthcare and sustainability where my domain knowledge meets the most interesting product challenges of the decade.
