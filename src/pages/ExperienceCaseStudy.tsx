@@ -159,23 +159,23 @@ const ExperienceCaseStudy = () => {
           {logosBySlug[slug || ""] ? (
             <img src={logosBySlug[slug || ""]} alt={`${data.company} logo`} className="h-10 object-contain mb-6" />
           ) : null}
-          <p className="text-xs font-medium tracking-widest uppercase text-primary mb-4">
+          <p className="text-xs font-medium tracking-widest uppercase text-primary mb-6">
             {data.subtitle}
           </p>
-          <h1 className="text-3xl md:text-4xl font-serif font-semibold leading-tight text-foreground mb-2">
+          <h1 className="text-3xl md:text-4xl font-serif font-semibold leading-tight text-foreground mb-6">
             {data.role}
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.8 }}>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-12" style={{ lineHeight: 1.8 }}>
             {data.summary}
           </p>
 
-          <div className="flex flex-wrap gap-x-8 gap-y-3 mb-8">
+          <div className="space-y-10 mb-12">
             <div>
-              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">ROLE</p>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">ROLE</p>
               <p className="text-sm font-medium text-foreground">{data.meta_role}</p>
             </div>
             <div>
-              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-1">TOOLS</p>
+              <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">TOOLS</p>
               <p className="text-sm font-medium text-foreground">{data.tools}</p>
             </div>
           </div>
