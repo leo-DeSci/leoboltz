@@ -10,6 +10,7 @@ import bioProtocol1 from "@/assets/bio-protocol-1.png";
 import bioProtocol2 from "@/assets/bio-protocol-2.png";
 import bioProtocol3 from "@/assets/bio-protocol-3.png";
 import bioProtocolLogo from "@/assets/bio-protocol-logo.svg";
+import squakeLogo from "@/assets/squake-logo.svg";
 import squake1 from "@/assets/squake-1.avif";
 import squake2 from "@/assets/squake-2.avif";
 
@@ -20,6 +21,7 @@ const screenshotsBySlug: Record<string, string[]> = {
 
 const logosBySlug: Record<string, string> = {
   "bio-protocol": bioProtocolLogo,
+  "square": squakeLogo,
 };
 import Footer from "@/components/Footer";
 
