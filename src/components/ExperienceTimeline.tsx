@@ -17,20 +17,24 @@ const ExperienceTimeline = () => {
   });
 
   return (
-    <section id="experience" className="max-w-2xl mx-auto px-6 py-10">
+    <section id="experience" className="max-w-2xl mx-auto px-6 pt-4 pb-10">
       <h2 className="text-lg font-semibold text-foreground mb-6 tracking-tight">
         Experience
       </h2>
-      <div className="divide-y divide-border">
-        {isLoading
-          ? Array.from({ length: 4 }).map((_, i) => (
-              <div key={i} className="py-4 animate-pulse space-y-2">
-                <div className="h-4 bg-muted rounded w-2/3" />
-                <div className="h-3 bg-muted rounded w-1/3" />
-                <div className="h-3 bg-muted rounded w-full" />
-              </div>
-            ))
-          : experiences.map((exp) => (
+      {isLoading ? (
+        <div className="divide-y divide-border">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="py-4 animate-pulse space-y-2">
+              <div className="h-4 bg-muted rounded w-2/3" />
+              <div className="h-3 bg-muted rounded w-1/3" />
+              <div className="h-3 bg-muted rounded w-full" />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div className="divide-y divide-border">
+            {experiences.slice(0, 2).map((exp) => (
               <div key={exp.slug} className="py-4">
                 <div className="flex items-start justify-between">
                   <h3 className="text-sm font-semibold text-foreground">
@@ -55,7 +59,32 @@ const ExperienceTimeline = () => {
                 </Link>
               </div>
             ))}
-      </div>
+          </div>
+          {experiences.length > 2 && (
+            <div className="mt-8 pt-6 border-t border-border">
+              <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-4">
+                Previously
+              </h3>
+              <ul className="space-y-2">
+                {experiences.slice(2).map((exp) => (
+                  <li
+                    key={exp.slug}
+                    className="flex items-baseline justify-between gap-4 text-sm"
+                  >
+                    <span className="text-foreground">
+                      <span className="font-medium">{exp.role}</span>
+                      <span className="text-muted-foreground"> · {exp.company}</span>
+                    </span>
+                    <span className="text-muted-foreground shrink-0 tabular-nums">
+                      {exp.dates}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </>
+      )}
     </section>
   );
 };
