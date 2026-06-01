@@ -5,7 +5,7 @@ const education = [
     year: "2020 — 2022",
   },
   {
-    degree: "BA Business Communications",
+    degree: "BA Business Communications Management",
     institution: "HTW Berlin",
     year: "2016 — 2019",
   },
