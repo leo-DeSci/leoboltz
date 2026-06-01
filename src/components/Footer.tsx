@@ -8,7 +8,7 @@ const Footer = () => {
       </h2>
       <div className="flex items-center gap-4 mb-12">
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/leonard-boltz-27649b159/"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -17,7 +17,7 @@ const Footer = () => {
           LinkedIn
         </a>
         <a
-          href="mailto:hello@example.com"
+          href="mailto:boltz.leonard@gmail.com"
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           <Mail className="w-4 h-4" />
