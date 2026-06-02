@@ -205,23 +205,20 @@ const ExperienceCaseStudy = () => {
             {data.approach_intro}
           </p>
           {data.approach_body && (
-            <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.75 }}>
+            <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line mb-8" style={{ lineHeight: 1.75 }}>
               {data.approach_body}
             </p>
           )}
-          {screenshots.length > 0 ? (
-            <div className="space-y-4">
-              <img src={screenshots[0]} alt="Platform overview" className="w-full rounded-lg border border-border" />
-            </div>
-          ) : (
-            <div className="border border-dashed border-border rounded-lg p-8 text-center">
-              <p className="text-sm text-muted-foreground italic">Screenshot or diagram placeholder</p>
-            </div>
+          {screenshots[0] && (
+            <img src={screenshots[0]} alt="Project detail page" className="w-full rounded-lg border border-border mb-8" />
           )}
           {data.approach_closing && (
-            <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
+            <p className="text-base text-muted-foreground leading-relaxed whitespace-pre-line mb-8" style={{ lineHeight: 1.75 }}>
               {data.approach_closing}
             </p>
+          )}
+          {screenshots[1] && (
+            <img src={screenshots[1]} alt="Market insights dashboard" className="w-full rounded-lg border border-border" />
           )}
         </section>
 
@@ -237,18 +234,6 @@ const ExperienceCaseStudy = () => {
             <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.75 }}>
               {data.impact_body}
             </p>
-          )}
-          {screenshots.length > 1 ? (
-            <div className="space-y-4">
-              <img src={screenshots[1]} alt="Platform detail" className="w-full rounded-lg border border-border" />
-              {screenshots[2] && (
-                <img src={screenshots[2]} alt="Platform detail" className="w-full rounded-lg border border-border" />
-              )}
-            </div>
-          ) : (
-            <div className="border border-dashed border-border rounded-lg p-8 text-center">
-              <p className="text-sm text-muted-foreground italic">Screenshot or metrics visualization placeholder</p>
-            </div>
           )}
           {data.impact_closing && (
             <p className="text-base text-muted-foreground leading-relaxed mt-8" style={{ lineHeight: 1.85 }}>
