@@ -185,8 +185,8 @@ const ExperienceCaseStudy = () => {
 
         {/* Objective */}
         <section id="objective" className="mb-10 scroll-mt-16">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">Objective</h2>
-          <p className="text-base text-muted-foreground leading-relaxed" style={{ lineHeight: 1.85 }}>
+          <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">OBJECTIVE</p>
+          <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug" style={{ lineHeight: 1.35 }}>
             {data.objective}
           </p>
         </section>
@@ -195,8 +195,8 @@ const ExperienceCaseStudy = () => {
 
         {/* Approach */}
         <section id="approach" className="mb-10 scroll-mt-16">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">Approach</h2>
-          <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.85 }}>
+          <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">APPROACH</p>
+          <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug mb-6" style={{ lineHeight: 1.35 }}>
             {data.approach_intro}
           </p>
           {screenshots.length > 0 ? (
@@ -219,8 +219,8 @@ const ExperienceCaseStudy = () => {
 
         {/* Impact */}
         <section id="impact" className="mb-10 scroll-mt-16">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-6">Impact</h2>
-          <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.85 }}>
+          <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-4">IMPACT</p>
+          <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug mb-6" style={{ lineHeight: 1.35 }}>
             {data.impact_intro}
           </p>
           {screenshots.length > 1 ? (
@@ -246,7 +246,7 @@ const ExperienceCaseStudy = () => {
 
         {/* Learnings */}
         <section id="learnings" className="mb-10 scroll-mt-16">
-          <h2 className="text-2xl md:text-3xl font-serif font-semibold text-foreground mb-8">Learnings</h2>
+          <p className="text-[10px] font-medium tracking-widest uppercase text-muted-foreground mb-6">LEARNINGS</p>
           <div className="space-y-5">
             {learnings.map((learning, i) => (
               <div key={i} className="border border-border rounded-xl p-6 bg-card">
