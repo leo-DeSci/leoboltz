@@ -16,17 +16,20 @@ export type Database = {
     Tables: {
       experiences: {
         Row: {
+          approach_body: string | null
           approach_closing: string | null
           approach_intro: string | null
           company: string
           created_at: string
           dates: string
           id: string
+          impact_body: string | null
           impact_closing: string | null
           impact_intro: string | null
           learnings: Json | null
           meta_role: string | null
           objective: string | null
+          objective_body: string | null
           role: string
           slug: string
           sort_order: number
@@ -36,17 +39,20 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          approach_body?: string | null
           approach_closing?: string | null
           approach_intro?: string | null
           company: string
           created_at?: string
           dates: string
           id?: string
+          impact_body?: string | null
           impact_closing?: string | null
           impact_intro?: string | null
           learnings?: Json | null
           meta_role?: string | null
           objective?: string | null
+          objective_body?: string | null
           role: string
           slug: string
           sort_order?: number
@@ -56,17 +62,20 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          approach_body?: string | null
           approach_closing?: string | null
           approach_intro?: string | null
           company?: string
           created_at?: string
           dates?: string
           id?: string
+          impact_body?: string | null
           impact_closing?: string | null
           impact_intro?: string | null
           learnings?: Json | null
           meta_role?: string | null
           objective?: string | null
+          objective_body?: string | null
           role?: string
           slug?: string
           sort_order?: number
