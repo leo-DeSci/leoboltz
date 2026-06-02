@@ -20,7 +20,7 @@ const HeroSection = () => {
           Product Manager · AI + Healthcare + Sustainability{" "}
         </p>
         <p className="text-base text-muted-foreground leading-relaxed">
-          Product Manager with 7+ years building at VC-backed startups. I own discovery through delivery, turn ambiguity into clear product decisions, and obsess over building the right thing for real users. Background in decentralized science, climate tech, and consumer apps. Currently exploring AI enabled product building in healthcare and sustainability where my domain knowledge meets the most interesting product challenges of the decade.
+          I am a Product Manager with hands-on experience building at the frontier. I've spent the last seven years in the Berlin Startup Space with four years doing early-stage product work across decentralized science, climate tech and B2C. I turn ambiguous problem spaces into shipped products: running discovery, shaping what gets built and why and staying in the weeds with engineering through release. Most recently at Bio Protocol, a Scientific AI Agent platform, I owned core platform modules that helped 35+ teams collectively raise $50M+. Currently diving into AI-native workflows with Lovable, Cursor, and Claude Code on a personal projects.
         </p>
       </div>
     </section>
