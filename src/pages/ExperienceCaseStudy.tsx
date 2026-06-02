@@ -189,6 +189,11 @@ const ExperienceCaseStudy = () => {
           <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug" style={{ lineHeight: 1.35 }}>
             {data.objective}
           </p>
+          {data.objective_body && (
+            <p className="text-base text-muted-foreground leading-relaxed mt-6" style={{ lineHeight: 1.75 }}>
+              {data.objective_body}
+            </p>
+          )}
         </section>
 
         <hr className="border-border mb-10" />
@@ -199,6 +204,11 @@ const ExperienceCaseStudy = () => {
           <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug mb-6" style={{ lineHeight: 1.35 }}>
             {data.approach_intro}
           </p>
+          {data.approach_body && (
+            <p className="text-base text-muted-foreground leading-relaxed mb-8" style={{ lineHeight: 1.75 }}>
+              {data.approach_body}
+            </p>
+          )}
           {screenshots.length > 0 ? (
             <div className="space-y-4">
               <img src={screenshots[0]} alt="Platform overview" className="w-full rounded-lg border border-border" />
@@ -223,6 +233,11 @@ const ExperienceCaseStudy = () => {
           <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug mb-6" style={{ lineHeight: 1.35 }}>
             {data.impact_intro}
           </p>
+          {data.impact_body && (
+            <p className="text-base text-muted-foreground leading-relaxed mb-6" style={{ lineHeight: 1.75 }}>
+              {data.impact_body}
+            </p>
+          )}
           {screenshots.length > 1 ? (
             <div className="space-y-4">
               <img src={screenshots[1]} alt="Platform detail" className="w-full rounded-lg border border-border" />
