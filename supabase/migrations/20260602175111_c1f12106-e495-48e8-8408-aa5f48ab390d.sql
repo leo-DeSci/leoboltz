@@ -1,0 +1,5 @@
+UPDATE public.experiences
+SET objective_body = 'Built the investor intelligence layer of a Scientific AI Agent funding platform — from individual project pages to a market-wide dashboard — giving investors what they needed to make confident funding decisions in an emerging asset class with no established playbook.',
+    approach_body = 'Built the investor intelligence layer of a Scientific AI Agent funding platform — from individual project pages to a market-wide dashboard — giving investors what they needed to make confident funding decisions in an emerging asset class with no established playbook.',
+    impact_body = 'Built the investor intelligence layer of a Scientific AI Agent funding platform — from individual project pages to a market-wide dashboard — giving investors what they needed to make confident funding decisions in an emerging asset class with no established playbook.'
+WHERE slug = 'bio-protocol';
