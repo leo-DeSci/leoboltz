@@ -3,11 +3,13 @@ const education = [
     degree: "MSc Management — Entrepreneurship & Innovation",
     institution: "Nova School of Business and Economics",
     year: "2020 — 2022",
+    note: "Ø 17.25",
   },
   {
     degree: "BA Business Communications Management",
     institution: "HTW Berlin",
     year: "2016 — 2019",
+    note: "Ø 1,6",
   },
 ];
 
@@ -27,6 +29,11 @@ const EducationSection = () => {
               <p className="text-sm text-muted-foreground mt-0.5">
                 {ed.institution}
               </p>
+              {ed.note && (
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {ed.note}
+                </p>
+              )}
             </div>
             <span className="text-sm text-muted-foreground shrink-0 ml-4">
               {ed.year}
