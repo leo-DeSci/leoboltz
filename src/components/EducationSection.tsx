@@ -3,11 +3,13 @@ const education = [
     degree: "MSc Management — Entrepreneurship & Innovation",
     institution: "Nova School of Business and Economics",
     year: "2020 — 2022",
+    note: "Ø 17.25",
   },
   {
     degree: "BA Business Communications Management",
     institution: "HTW Berlin",
     year: "2016 — 2019",
+    note: "Ø 1,6",
   },
 ];
 
