@@ -29,6 +29,11 @@ const EducationSection = () => {
               <p className="text-sm text-muted-foreground mt-0.5">
                 {ed.institution}
               </p>
+              {ed.note && (
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {ed.note}
+                </p>
+              )}
             </div>
             <span className="text-sm text-muted-foreground shrink-0 ml-4">
               {ed.year}
