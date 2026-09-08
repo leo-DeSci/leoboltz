@@ -34,7 +34,7 @@ const ExperienceTimeline = () => {
       ) : (
         <>
           <div className="divide-y divide-border">
-            {experiences.slice(0, 2).map((exp) => (
+            {experiences.slice(0, 1).map((exp) => (
               <div key={exp.slug} className="py-4">
                 <div className="flex items-start justify-between">
                   <h3 className="text-sm font-semibold text-foreground">
@@ -60,13 +60,13 @@ const ExperienceTimeline = () => {
               </div>
             ))}
           </div>
-          {experiences.length > 2 && (
+          {experiences.length > 1 && (
             <div className="mt-8 pt-6 border-t border-border">
               <h3 className="text-xs uppercase tracking-wider text-muted-foreground mb-4">
                 Previously
               </h3>
               <ul className="space-y-2">
-                {experiences.slice(2).map((exp) => (
+                {experiences.slice(1).map((exp) => (
                   <li
                     key={exp.slug}
                     className="flex items-baseline justify-between gap-4 text-sm"
