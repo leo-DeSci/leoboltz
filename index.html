@@ -23,6 +23,13 @@
   <meta name="twitter:title" content="Leo Boltz - Product Manager">
   <meta property="og:description" content="Leo Boltz is a product leader spanning 7+ years in startup product development with a moat in discovery led product building">
   <meta name="twitter:description" content="Leo Boltz is a product leader spanning 7+ years in startup product development with a moat in discovery led product building">
+    <script>
+  var redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, null, redirect);
+  }
+</script>
 </head>
 
   <body>
